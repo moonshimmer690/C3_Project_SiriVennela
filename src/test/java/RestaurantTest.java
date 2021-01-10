@@ -74,4 +74,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void calculate_order_having_items_with_cost_119_269(){
+        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        assertEquals(388,restaurant.calculateOrderCost());
+    }
+
+    @Test
+    public void calculate_order_cost_if_no_item_selected(){
+        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        assertEquals(0,restaurant.calculateOrderCost());
+    }
 }
