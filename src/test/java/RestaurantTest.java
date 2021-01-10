@@ -75,8 +75,9 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
-    public void calculate_order_having_items_with_cost_119_269(){
+    public void calculate_order_cost_having_items_with_price_119_269_should_return_388(){
         restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
@@ -84,8 +85,9 @@ class RestaurantTest {
     }
 
     @Test
-    public void calculate_order_cost_if_no_item_selected(){
+    public void calculate_order_cost_if_no_item_selected_should_return_0(){
         restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         assertEquals(0,restaurant.calculateOrderCost());
     }
+    //<<<<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }

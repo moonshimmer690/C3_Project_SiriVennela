@@ -54,6 +54,15 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
+
+    public int calculateOrderCost(){
+        int costOfOrder = 0;
+        for(Item item: menu) {
+            costOfOrder += item.getPrice();
+        }
+        return costOfOrder;
+    }
+
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
